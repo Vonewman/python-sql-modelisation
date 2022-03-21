@@ -9,7 +9,7 @@ from liste_menu import display
 choix = ''
 menu = Menu.liste_menu.copy()
 
-def lancer(menu):
+def run(menu):
     """
     Lance le Menu du programme, en prenant en entrer la liste des menus
     """
@@ -23,11 +23,11 @@ def lancer(menu):
             
             if choix.lower() == 'e':
                 print("Taches deja effectuees")
-                lancer(menus_popped)
+                run(menus_popped)
                 
             elif choix.lower() == 'r':
                 copy_menus = Menu.liste_menu.copy()
-                lancer(copy_menus)
+                run(copy_menus)
                 
             elif choix.lower() != 'q':
                 try:
@@ -50,7 +50,7 @@ def lancer(menu):
                     display(result)
                     print()
                 except:
-                    lancer(copy_menus)
+                    run(copy_menus)
             elif choix.lower() == 'q':
                 sys.exit()
                     
@@ -62,4 +62,4 @@ def lancer(menu):
         exit()
 
 
-lancer(menu)
+run(menu)
